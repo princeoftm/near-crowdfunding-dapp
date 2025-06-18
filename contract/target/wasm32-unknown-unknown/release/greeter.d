@@ -1,0 +1,1 @@
+/Users/aniruddhrao/Documents/GitHub/near-crowdfunding-dapp/contract/target/wasm32-unknown-unknown/release/greeter.wasm: /Users/aniruddhrao/Documents/GitHub/near-crowdfunding-dapp/contract/src/lib.rs /Users/aniruddhrao/Documents/GitHub/near-crowdfunding-dapp/contract/src/models.rs /Users/aniruddhrao/Documents/GitHub/near-crowdfunding-dapp/contract/src/utils.rs

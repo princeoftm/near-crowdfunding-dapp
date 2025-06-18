@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/aniruddhrao/openfund/contract/target/wasm32-unknown-unknown/release/build/typenum-d00b199581e10497/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/aniruddhrao/openfund/contract/target/wasm32-unknown-unknown/release/build/typenum-d00b199581e10497/out/op.rs

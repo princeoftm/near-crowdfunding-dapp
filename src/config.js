@@ -1,63 +1,27 @@
-const CONTRACT_NAME = process.env.CONTRACT_NAME ||'crowdfui131.testnet'
+const contractPerNetwork = {
+  mainnet: '',
+  testnet: 'chunky-arch.testnet',
+};
 
-function getConfig(env) {
-  switch (env) {
+// Chains for EVM Wallets
+const evmWalletChains = {
+  mainnet: {
+    chainId: 397,
+    name: 'Near Mainnet',
+    explorer: 'https://eth-explorer.near.org',
+    rpc: 'https://eth-rpc.mainnet.near.org',
+  },
+  testnet: {
+    chainId: 398,
+    name: 'Near Testnet',
+    explorer: 'https://eth-explorer-testnet.near.org',
+    rpc: 'https://eth-rpc.testnet.near.org',
+  },
+};
 
-  case 'production':
-  case 'mainnet':
-    return {
-      networkId: 'mainnet',
-      nodeUrl: 'https://rpc.mainnet.near.org',
-      contractName: CONTRACT_NAME,
-      walletUrl: 'https://wallet.near.org',
-      helperUrl: 'https://helper.mainnet.near.org',
-      explorerUrl: 'https://explorer.mainnet.near.org',
-    }
-  case 'development':
-  case 'testnet':
-    return {
-      networkId: 'testnet',
-      nodeUrl: 'https://rpc.testnet.near.org',
-      contractName: CONTRACT_NAME,
-      walletUrl: 'https://wallet.testnet.near.org',
-      helperUrl: 'https://helper.testnet.near.org',
-      explorerUrl: 'https://explorer.testnet.near.org',
-    }
-  case 'betanet':
-    return {
-      networkId: 'betanet',
-      nodeUrl: 'https://rpc.betanet.near.org',
-      contractName: CONTRACT_NAME,
-      walletUrl: 'https://wallet.betanet.near.org',
-      helperUrl: 'https://helper.betanet.near.org',
-      explorerUrl: 'https://explorer.betanet.near.org',
-    }
-  case 'local':
-    return {
-      networkId: 'local',
-      nodeUrl: 'http://localhost:3030',
-      keyPath: `${process.env.HOME}/.near/validator_key.json`,
-      walletUrl: 'http://localhost:4000/wallet',
-      contractName: CONTRACT_NAME,
-    }
-  case 'test':
-  case 'ci':
-    return {
-      networkId: 'shared-test',
-      nodeUrl: 'https://rpc.ci-testnet.near.org',
-      contractName: CONTRACT_NAME,
-      masterAccount: 'test.near',
-    }
-  case 'ci-betanet':
-    return {
-      networkId: 'shared-test-staging',
-      nodeUrl: 'https://rpc.ci-betanet.near.org',
-      contractName: CONTRACT_NAME,
-      masterAccount: 'test.near',
-    }
-  default:
-    throw Error(`Unconfigured environment '${env}'. Can be configured in src/config.js.`)
-  }
-}
+export const NetworkId = 'testnet';
+export const CrowdfundingNearContract = contractPerNetwork[NetworkId];
+export const EVMWalletChain = evmWalletChains[NetworkId];
 
-module.exports = getConfig
+// 1738051734823516400 < 1738069020000000000
+// 18446744073709551615

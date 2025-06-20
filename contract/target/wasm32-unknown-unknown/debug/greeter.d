@@ -1,1 +1,0 @@
-/Users/aniruddhrao/openfund/contract/target/wasm32-unknown-unknown/debug/greeter.wasm: /Users/aniruddhrao/openfund/contract/src/lib.rs /Users/aniruddhrao/openfund/contract/src/models.rs /Users/aniruddhrao/openfund/contract/src/utils.rs

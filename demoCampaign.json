@@ -1,0 +1,23 @@
+{
+    "campaigns": [
+      {
+        "id": 0,
+        "image": "bafkreidnaarayspr7binfoafpunemttfmmgck6ae4o7f2m5tjorm7jptha",
+        "title": "Campaign 1",
+        "description": "Testing",
+        "targetAmount": 10000,
+        "deadline": 1737530520,
+        "status": "open"
+      },
+      {
+        "id": 1,
+        "image": "bafkreih7vcsutgusixfqnyz6i7dhvdpvpak46drfx4zxp4lqrn2ed5d54u",
+        "title": "Campaign 2",
+        "description": "Laptop",
+        "targetAmount": 10000,
+        "deadline": 1737541560,
+        "status": "closed"
+      }
+    ]
+  }
+  

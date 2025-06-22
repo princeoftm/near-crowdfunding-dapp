@@ -3,6 +3,7 @@ import { NetworkId } from './config.js';
 import { NearContext, Wallet } from '@/wallets/near';
 import "./App.css";
 import Index from './pages/Index.jsx';
+window.Buffer = window.Buffer || require("buffer").Buffer;
 
 // Wallet instance
 const wallet = new Wallet({ NetworkId: NetworkId });

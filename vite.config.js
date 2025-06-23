@@ -8,37 +8,33 @@ export default defineConfig({
   plugins: [
     react(),
     eslint(),
+    // Make sure nodePolyfills is here and correctly configured
     nodePolyfills({
-      // It's good practice to explicitly state which globals you need
+      // include: ['buffer', 'process'], // You can uncomment this if you want to be explicit
       globals: {
         Buffer: true,
         global: true,
         process: true,
       },
-      // If you're importing node: modules explicitly (e.g., import 'node:buffer')
       protocolImports: true,
     }),
   ],
   resolve: {
     alias: {
       '@': '/src',
-      // The 'buffer: "buffer"' alias is usually not needed when nodePolyfills is active
-      // as it handles the resolution. You can remove it.
+      // If you are still having issues with 'buffer' specifically,
+      // you could try uncommenting this, but ideally nodePolyfills handles it.
       // buffer: 'buffer',
     },
   },
   optimizeDeps: {
     esbuildOptions: {
-      // This is often redundant if nodePolyfills handles 'global', but harmless
       define: {
         global: 'globalThis'
       },
-      // You don't need NodeGlobalsPolyfillPlugin here if nodePolyfills is active
-      // plugins: [
-      //   NodeGlobalsPolyfillPlugin({
-      //     buffer: true
-      //   })
-      // ]
+      plugins: [
+        // Make sure NodeGlobalsPolyfillPlugin is *NOT* here if you're using nodePolyfills
+      ]
     }
   }
 });

@@ -49,14 +49,6 @@ export class Wallet {
     this.selector = setupWalletSelector({
       network: this.networkId,
       modules: [
-        setupMeteorWallet(),
-        setupEthereumWallets({ wagmiConfig, web3Modal, alwaysOnboardDuringSignIn: true }),
-        setupLedger(),
-        setupBitteWallet(),
-        setupHereWallet(),
-        setupSender(),
-        setupNearMobileWallet(),
-        setupWelldoneWallet(),
         setupMyNearWallet(),
       ],
     });

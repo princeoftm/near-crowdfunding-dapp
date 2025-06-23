@@ -17,11 +17,11 @@ export default defineConfig({
       define: {
         global: 'globalThis'
       },
-            plugins: [
-                NodeGlobalsPolyfillPlugin({
-                    buffer: true
-                })
-            ]
+      plugins: [
+        NodeGlobalsPolyfillPlugin({
+          buffer: true
+        })
+      ]
     }
   }
 })
